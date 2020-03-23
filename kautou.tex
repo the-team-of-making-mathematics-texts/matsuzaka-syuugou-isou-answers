@@ -1,0 +1,130 @@
+\documentclass[dvipdfmx,uplatex,11pt]{jsarticle}
+%
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{wrapfig}
+\usepackage{bm}
+\usepackage{ascmac}
+\setcounter{tocdepth}{2}
+\usepackage{physics}
+\usepackage{geometry}
+\usepackage{framed}
+\usepackage{latexsym}
+\everymath{\displaystyle}
+%
+\geometry{left=10mm,right=10mm,top=5mm,bottom=10mm}
+\title{集合・位相入門：解答集}
+\author{}
+\begin{document}
+\maketitle
+​
+\section{集合と写像}
+​
+\subsection{p11}
+(1)\\
+\begin{leftbar}
+\begin{proof}
+必要条件であることを示す．$a \in A$を前提に、$\{ a\} \subset A$の定義が成り立つことを示す．$\{ a \} \subset A$の定義は任意の$x$について$x \in \{a\} \Rightarrow x  \in A$． \par
+今，$a \in A$を前提とするので，当然$x=a \Rightarrow x \in A$．$x \in  \{a\} \Rightarrow x=a$と合わせると$x \in \{a\} \Rightarrow x \in A$．これは任意の$x$について成り立つので上の定義が成り立つ．\par
+十分条件であることを示す．$\{a\} \subset A$を前提に$a \in A$が成り立つことを示す.\par
+今，$\{a\} \subset A$を前提とするので定義より任意の$x$について$x \in \{a\} \Rightarrow x \in A$．また，$a \in \{a\}$なので合わせると$a \in A$が成り立つ．
+\end{proof}
+\end{leftbar}
+​
+(2)\\
+\begin{leftbar}
+    \[
+        \{x \mid x \in \mathbb{R}， (x-1)(x-2)(x-3)=0\}
+    \]
+\end{leftbar}
+​
+(3)\\
+​
+\begin{leftbar}
+    (a)\quad $x^6 -1 =0$について，解を$x=r(\cos \theta + i \sin \theta)$（$r>0$）とすると，
+    \[
+        x^6 = r^6 (\cos 6 \theta + i \sin 6 \theta)=1 =\cos 0 + i \sin 0
+    \]
+    と$r>0$より，$r=1$となる．ここで，
+    \begin{gather*}
+        6 \theta = 0 + 2k\pi \, (0 \le \theta <2 \pi ) \, (k \in \mathbb{Z}) \\
+        \therefore ~ \theta =\frac{k}{3}\pi 
+    \end{gather*}
+    であり，これを満たす$k$は$k=0，1，2，3，4，5$である．ゆえに，
+    \[
+        \{x \mid x \in \mathbb{C}，x^6=1\} = \left \{1，-1，\pm \frac{1}{2} \pm \frac{\sqrt{3}}{2} i \right \}
+    \]
+    (b) 
+    \begin{align*}
+    i(x+i)^4&=i(x^4 + 4 x i^3 +6 x^2 i^2 + 4x^3 i +i^4) \\
+    & = i(x^4 -4 xi -6x^2 + 4x^3 i+1) \\
+    & = (x^4-6x^2+1)i + 4x-4x^3
+    \end{align*}
+    ここで，$i(x+i)^4 \in \mathbb{R}$となるための必要十分条件は，$x^4-6x^2+1=0$となることで，この方程式を解くと，
+    \begin{align*}
+        x^2 &= \frac{6\pm \sqrt{32}}{-2} \\
+        & = 3 \pm 2 \sqrt{2} \\
+        \therefore & x= \sqrt{2}+1 ，-\sqrt{2}-1，1-\sqrt{2}，\sqrt{2}-1
+    \end{align*}
+    これより，
+    \[
+        \{x \mid x \in \mathbb{R}，i(x+i)^4 \in \mathbb{R}\} = \left \{  \sqrt{2}+1 ，-\sqrt{2}-1，1-\sqrt{2}，\sqrt{2}-1 \right \}
+        \]
+(c) \quad $y^3 =2$を$y \in \mathbb{R}$のもとで解くと，$y=\sqrt[3]{2}$であり，$\sqrt[3]{2} \notin \mathbb{Q}$である．
+もし$\sqrt[3]{2} \in \mathbb{Q}$であるとすると，
+\[
+    \exists a，b \in \mathbb{Z} ~ \mathrm{s.t} ~ \sqrt[3]{2} = \frac{b}{a} \iff a^3 + a^3=b^3
+\]
+であり，これは$\mathrm{Fermat}$の最終定理に矛盾する．
+\[
+    \therefore \, \{y \mid y \in \mathbb{Q}，y^3=2 \} = \varnothing
+\]
+\end{leftbar}
+​
+\subsection{p39}
+​
+\begin{screen}
+    (1) \quad (4.2) \\
+{\it proof.}
+\begin{align*}
+    & b \in f(P_1 \cup P_2) \\
+    \iff & \exists a \in P_1 \cup P_2 ~ \mathrm{s.t} ~ f(a)=b \\
+    \iff & \exists a \in P_1 ~\mathrm{s.t.} ~ f(a)=b \lor \exists c \in P_2 ~ \mathrm{s.t} ~ f(c)=b \\
+    \iff & b \in f(P_1) \cup f(P_2) 
+\end{align*}
+\dotfill 
+\begin{align*}
+\because  \quad  & b \in f(P_1) \lor b \in f(P_2) \\
+\iff & \exists a ~ \mathrm{s.t.} ~ a \in P_1 \lor a \in P_2 ，b = f(a)
+\end{align*}
+\end{screen}
+​
+\begin{screen}
+    (1) \quad (4.2)' \\
+    {\it proof.}
+\begin{align*}
+    & a \in f^{-1} (Q_1 \cup Q_2) \\
+    \iff & f(a) \in Q_1 \cup Q_2 \\
+    \iff & f(a)  \in Q_1 \lor f(a) \in Q_2 \\
+    \iff & a \in f^{-1} (Q_1) \cup f^{-1} (Q_2)
+\end{align*}
+\end{screen}
+​
+\begin{screen}
+    (2) \quad (4.5) \\
+    {\it proof.}
+    \begin{align*}
+        & a \in P \\
+       & \Longrightarrow  f(a) \subset f(P) \\
+       & \Longrightarrow a \in f^{-1} (f(P))
+    \end{align*}
+    \dotfill 
+    \[
+        \because \quad f^{-1} (f(P)) = \{ a \mid f(a)\in f(P)\}
+        \]
+    また，$f \colon \mathbb{R} \ni x \mapsto x^2 \in \mathbb{R}$は逆が成り立たない例である．\par
+    $P=[1，2]$とすると，$f(P)=[1，4]$，$f^{-1}(f(P))=[-2，-1] \cup [1，2]$．
+\end{screen}
+\end{document}
