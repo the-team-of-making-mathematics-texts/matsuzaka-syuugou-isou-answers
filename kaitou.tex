@@ -19,11 +19,9 @@
 \author{}
 \begin{document}
 \maketitle
-​
 \section{集合と写像}
-​
 \subsection{p11}
-(1)\\
+(1)
 \begin{leftbar}
 \begin{proof}
 必要条件であることを示す．$a \in A$を前提に、$\{ a\} \subset A$の定義が成り立つことを示す．$\{ a \} \subset A$の定義は任意の$x$について$x \in \{a\} \Rightarrow x  \in A$． \par
@@ -32,16 +30,13 @@
 今，$\{a\} \subset A$を前提とするので定義より任意の$x$について$x \in \{a\} \Rightarrow x \in A$．また，$a \in \{a\}$なので合わせると$a \in A$が成り立つ．
 \end{proof}
 \end{leftbar}
-​
-(2)\\
+(2)
 \begin{leftbar}
     \[
         \{x \mid x \in \mathbb{R}， (x-1)(x-2)(x-3)=0\}
     \]
 \end{leftbar}
-​
-(3)\\
-​
+(3)
 \begin{leftbar}
     (a)\quad $x^6 -1 =0$について，解を$x=r(\cos \theta + i \sin \theta)$（$r>0$）とすると，
     \[
@@ -82,7 +77,6 @@
     \therefore \, \{y \mid y \in \mathbb{Q}，y^3=2 \} = \varnothing
 \]
 \end{leftbar}
-
 \begin{leftbar}
     $z \in \mathbb{Z}$のとき，$f(z)=2^z$とおくと，$f$は増加函数である．これと，
     \[
@@ -93,7 +87,6 @@
         \{z \mid z \in \mathbb{Z}，0.1<2^z<100\} = \{-3，-2，-1，0，1，2，3，4，5，6\}
     \]
 \end{leftbar}
-
 \begin{leftbar}
     $k \in \mathbb{N}$として，$n=4k-3，4k-2，4k-1，4k$の場合を調べる．\par 
     $n =4k-3$のとき，
@@ -125,7 +118,6 @@
     \]
     と表される．
 \end{leftbar}
-
 (f)
 \begin{leftbar}
     $n \in \mathbb{N}$のもとで，
@@ -164,7 +156,6 @@
     以上の議論により，(i)の主張がたしかめられた．
     \end{proof}
 \end{leftbar}
-
 (ii)
 \begin{leftbar}
     \begin{proof}
@@ -179,12 +170,10 @@
         であるから，$x^{-1} \in A$である．よって命題の主張が正しいことが示された．
     \end{proof}
 \end{leftbar}
-​
 \subsection{p39}
-​
 \begin{screen}
     (1) \quad (4.2) \\
-{\it proof.}
+{\it Proof.}
 \begin{align*}
     & b \in f(P_1 \cup P_2) \\
     \iff & \exists a \in P_1 \cup P_2 ~ \mathrm{s.t} ~ f(a)=b \\
@@ -197,10 +186,9 @@
 \iff & \exists a ~ \mathrm{s.t.} ~ a \in P_1 \lor a \in P_2 ，b = f(a)
 \end{align*}
 \end{screen}
-​
 \begin{screen}
     (1) \quad (4.2)' \\
-    {\it proof.}
+    {\it Proof.}
 \begin{align*}
     & a \in f^{-1} (Q_1 \cup Q_2) \\
     \iff & f(a) \in Q_1 \cup Q_2 \\
@@ -208,10 +196,9 @@
     \iff & a \in f^{-1} (Q_1) \cup f^{-1} (Q_2)
 \end{align*}
 \end{screen}
-​
 \begin{screen}
     (2) \quad (4.5) \\
-    {\it proof.}
+    {\it Proof.}
     \begin{align*}
         & a \in P \\
        & \Longrightarrow  f(a) \subset f(P) \\
@@ -224,4 +211,86 @@
     また，$f \colon \mathbb{R} \ni x \mapsto x^2 \in \mathbb{R}$は逆が成り立たない例である．\par
     $P=[1，2]$とすると，$f(P)=[1，4]$，$f^{-1}(f(P))=[-2，-1] \cup [1，2]$．
 \end{screen}
+\subsection{p151}
+1.
+\begin{leftbar}
+    \begin{proof}
+        $A$に関する条件により，$k \in \mathbb{N}$を用いて，
+        \[
+            A = \{a_1  , \dots , a_k\}
+        \]
+        とかける．
+
+        ここで，
+        \[
+            A^c = \mathbb{R}^n \setminus A
+        \]
+        の点$a$を任意にとる．このとき，ある$\varepsilon >0$を
+        \[
+             \Bigl (0< \Bigl) ~ \varepsilon < \min \{ d(a,a_1),\dots,d(a,a_k)\}
+        \]
+        を満たすようにとると，
+        \begin{align*}
+            & B(a;\varepsilon) \cap A = \varnothing \\
+            \iff & B (a;\varepsilon) \subset A^c
+        \end{align*}
+        となるため， $A^c$は$\mathbb{R}^n$の開集合である．よって，$A$は閉集合であることがただちに従う．
+    \end{proof}
+\end{leftbar}
+\newpage
+2.
+\begin{leftbar}
+    \begin{proof}
+    $a,b$は$\mathbb{R}^n$の相異なる2点だから，$d(a,b)>0$となることはよい．
+
+    ここで，$0< \varepsilon < \frac{d(a,b)}{2}$なる$\varepsilon$をとり，
+    \[
+        U \coloneqq B(a,\varepsilon),\quad V \coloneqq B (b,\varepsilon)
+    \]
+    とする．このとき，$U,V$は開集合である．
+    
+    また，$x \in U \cap V$なる$x \in \mathbb{R}^n$が存在すると仮定すると，
+    \[
+        d(x,a)<\varepsilon ,\quad d(x,b)<\varepsilon
+    \]
+    となる．このとき，三角不等式により，
+    \[
+        d(a,b)  \le d(x,a)+d(x,b) <\varepsilon + \varepsilon = 2 \varepsilon = d(a,b)
+    \]
+    となり，これは矛盾．ゆえに
+    \[
+        U \cap V = \varnothing 
+    \]
+    となり，ただちに主張が従う．
+    \end{proof}
+\end{leftbar}
+\newpage
+3
+\begin{leftbar}
+    \begin{proof}
+        まず，前半の主張について示す．
+
+        $x=(x_1  , \dots , x_n)\in　(a_1 , b_1) \times \dots \times (a_n , b_n)$とする．このとき，
+        \[
+            \varepsilon \coloneqq \min \{ \abs{x_1-a},\dots,\abs{x_n -a},\abs{x_1-b},\dots, \abs{x_n-b} \}
+        \]
+        なる$\varepsilon$を任意にとる．
+        このとき，
+        \[
+            B(x;\varepsilon) \subset (a_1 , b_1) \times \dots \times (a_n , b_n)
+        \]
+        であるから，$(a_1 , b_1) \times \dots \times (a_n , b_n)$は開集合である．
+
+        後半の主張について示す．
+        
+        $ y = (y_1 , \dots + y_n ) \notin [a_1 , b_1] \times \dots \times [a_n , b_n]$とする．
+
+        このとき，ある$j \in \{1,\dots n\}$について，$y_j \notin [a_j , b_j]$であることはよい．さらに，
+        \[
+            \delta \coloneqq \min  \{ \abs{y_j -a},\abs{y_j - b}\}
+        \]
+        とすると，$ B(y , \delta ) \subset {[a_1,b_1] \times \dots \times [a_n , b_n]}^c$である．
+        したがって，$[a_1,b_1] \times \dots \times [a_n , b_n]$は閉集合である．
+    \end{proof}
+    \end{leftbar}
 \end{document}
