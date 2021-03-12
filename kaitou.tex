@@ -310,6 +310,129 @@
         したがって，$[a_1,b_1] \times \dots \times [a_n , b_n]$は閉集合である．
     \end{proof}
     \end{leftbar}
+
+\section{p164}
+問題3，4
+
+\begin{itembox}[c]{コメント}
+    $M$：subset ，$O$：$S$の開集合
+
+    ``$O \cap M = \varnothing$ならば$O \cap \overline{M} = \varnothing$''を示すだけなら3，4の命題を示すまでもない
+\end{itembox}
+
+\begin{leftbar}
+    \begin{proof}
+        \begin{align*}
+            &O \cap M = \varnothing \\
+            \Rightarrow~ & O \subset M^e 
+        \end{align*}
+        はよい．
+
+        $M^{ci}$とは，$M^c$に含まれる最大の開集合のことであるから，
+        $O \subset M^c$ならば$O \subset M^{ci}$となる．
+        \[
+            M^{ci} = M^{ac}
+        \]
+        であるから，
+        \[
+            O \subset M^{ac}
+        \]
+        となる．
+        \begin{align*}
+            &O \subset M^{ac} \\
+            \Rightarrow ~ & O \cap M^a = \varnothing
+        \end{align*}
+        が成り立つ．
+    \end{proof}
+\end{leftbar}
+
+\subsection{p174〜175}
+
+問題3，7：
+\begin{itembox}[c]{コメント}
+一般の位相を考えるとき，位相の全体像がぼんやりしすぎていてチェックすべき条件がうまく考えられないときが多い．
+
+すなわち，開基や基本近傍系を考えるのが便利．連続性など諸性質も開基や基本近傍系の言葉で述べ直すことができる．
+
+問題3や7の条件は集合系に関する位相の公理と同様，開基の公理，基本近傍系の公理と名前をつけておくと便利．
+\end{itembox}
+
+3：
+
+$\mathfrak{B}$を$\mathfrak{P}(S)$の部分集合，$\mathfrak{O}$を$\mathfrak{B}$が生成する位相とする．
+\begin{itembox}[c]{コメント}
+    生成する，すなわち$\mathfrak{B}$を部分集合にもち，位相となる最小の構造体は本文中でアルゴリズム的に求められている．
+    
+    つまり，どんな集合系$\mathfrak{m}$があっても
+    \[
+        \mathfrak{m}_0 = \bigcap_{i \in I} A_i (A_i \in \mathfrak{m}，I \text{は有限集合})
+    \]
+    の全体を考えれば，$\mathfrak{m}_0$は$\mathfrak{m}$が生成する位相$\mathfrak{O}(\mathfrak{m})$の基底となっている．
+
+    集合系$\mathfrak{m}$をとったときにこの手順で$\mathfrak{m}_0$をとり直す必要があるか考えたいが，問題3の条件2つ($\mathrm{O}^{\ast} \mathrm{i}$)，($\mathrm{O}^{\ast} \mathrm{ii}$)を
+    $\mathfrak{m}$が満たしているならば，$\mathfrak{m}_0$をとりなおす必要がなく，$\mathfrak{m}$は位相$\mathfrak{O}(\mathfrak{m})$の基底となれる．
+\end{itembox}
+7：
+\begin{itembox}[c]{コメント}
+    $\{ V^{*} (x)\}_{x \in X}$という集合系の列から$\bigcup_{x \in X} V^{*} (x)$を考える．これは，位相空間$S$の開基となっている．
+    点$x \in S$があったとき，十分に小さい近傍を全てとれば，点$x$へ点列が近づく様子を記述する等といったことに便利である．これを基本近傍系という．
+    各点の基本近傍系をとったあと，どの点における近傍だったかという情報を忘れて，単なる集合系とみなしたものが開基である．
+\end{itembox}
+\begin{leftbar}
+    \begin{proof}
+        $\mathfrak{B}$が，$\mathfrak{O}(\mathfrak{B})$の基底であるとする．
+
+        $\mathfrak{B}$の任意の元$O$は，
+        \[
+            O = \bigcup_{\lambda \in \Lambda} \{ W_{\lambda} \mid W_{\lambda} \in \mathfrak{B}\} 
+        \]
+        と表される．
+
+        特に$S \in \mathfrak{O}(\mathfrak{B})$に対し成り立つので，($\mathrm{O}^{\ast} \mathrm{i}$)はよい．
+
+        $\mathfrak{B}$は$\mathfrak{O}(\mathfrak{B})$の部分集合であるから，
+        $W_1 \in \mathfrak{B}$，$W_2 \in \mathfrak{B}$は開集合で，$W_1 \cap W_2$も位相の公理から開集合である．
+        定理1.5から($\mathrm{O}^{\ast} \mathrm{ii}$)も成り立つ．
+
+        集合系$\mathfrak{O}$を$\bigcup_{\lambda \in \Lambda} \{ B_\lambda \mid B_\lambda \in \mathfrak{B}\}$の全体とする．
+
+        $\mathfrak{O}$が位相ならば，$\mathfrak{B}$は定義から$\mathfrak{O}$の基底でもある．
+        よって$\mathfrak{O}= \mathfrak{O}(\mathfrak{P})$となり，$\mathfrak{B}$は$\mathfrak{O}(\mathfrak{P})$の基底でもある．
+
+        位相の公理$(\mathrm{O} \mathrm{i})$，$(\mathrm{O} \mathrm{ii})$，$(\mathrm{O} \mathrm{iii})$を$\mathfrak{O}$がみたすことを確かめる．
+        \begin{itemize}
+            \item $(\mathrm{O} \mathrm{i})$について：
+        
+        $\Lambda = \varnothing$のとき，$\bigcup_{\Lambda} \{ \mathfrak{B}_{\lambda} \mid \mathfrak{B}_{\lambda} \in \mathfrak{B}\} = \varnothing$
+            と約束するので，$\varnothing \in \mathfrak{O}$．$(\mathrm{O}^{\ast} \mathrm{i})$より，$\mathfrak{B}$の元すべての和を取れば$S$となる．よって$(\mathrm{O}\mathrm{i})$はよい．
+
+            \item $(\mathrm{O} \mathrm{iii})$について：
+            
+            明らか．
+
+            \item $(\mathrm{O} \mathrm{ii})$について：
+            
+            $W_1 , W_2 \in \mathfrak{B}$に対し，$W_1 \cap W_2 \ne \varnothing$であれば，
+            $(\mathrm{O}^{\ast} \mathrm{ii})$から，
+            \[
+            \forall x \in W_1 \cap W_2 , ~ \exists W_2 \in \mathfrak{B} ~ \mathrm{s.t.} ~ x\in W_x \in W_1 \cap W_2
+            \]
+            $\bigcup W_x = W_1 \cap W_2$であり，$\bigcup W_x \in \mathfrak{O}$であるから，$W_1 \cap W_2 \in \mathfrak{O}$．
+
+            $O_1 , O_2 \in \mathfrak{O}$を
+            \[
+                O_1 = \bigcup_{\Lambda} W_\lambda , \quad O_2 = \bigcup_{\mu} W_{\mu} '
+            \]
+            とすると，
+            \[
+                O_1 \cap O_2 = \bigcup_{\lambda , \mu} (W_\lambda \cap W_{\mu} ')
+            \]
+            で，$W_\lambda \cap W_{\mu} ' \in \mathfrak{O}$であるから，$(\mathrm{O} \mathrm{iii})$を$\mathfrak{O}$がみたすことから，
+            $O_1 \cap O_2 \in \mathfrak{O}$である．よって$\mathfrak{O}$は位相である．
+        \end{itemize}
+    \end{proof}
+\end{leftbar}
+\newpage
     \subsection{p206}
     1.
     \begin{leftbar}
@@ -320,4 +443,36 @@ $M=\mathring{M}=\overline{M}$である．ここで，$M$は$S$でも$\varnothing
 従って，$S$でも$\varnothing$でもない任意の$S$の部分集合$M$について，$M^f=\varnothing$となる．
         \end{proof}
     \end{leftbar}
+    \newpage
+    \subsection{p233}
+問題7
+\begin{leftbar}
+    \begin{proof}
+有限の直積に関してハウスドルフ性が保存されることを示す．便宜上位相空間をSではなくX，Yなどと表わす．
+    $(X,\mathfrak{O})$がハウスドルフ的であることは，
+    \begin{equation}
+        \forall x, y \in X (x\neq y), ~ \exists O_1 , O_2 \in \mathfrak{O},~\mathrm{s.t.} ~ x\in O_1 , y \in O_2 , _1 \cap O_2 = \varnothing
+    \end{equation}
+    が成り立つことをいうが，これは
+    \begin{equation}
+        \forall x \in X , ~ \{ x\} = \bigcap \{ A \mid \text{$A$は$x$を含む閉集合の近傍}\}
+    \end{equation}
+    と同値．
+
+    $(X, \mathfrak{O}_X )$，$(Y,\mathfrak{O}_Y)$がHaussdorff的とする．$(x,y) \in X \times Y$に対し，$(x,y) \in O_{\lambda_1} \times O_{\lambda_2}$で，
+    この形に表される$\mathfrak{O}_{X \times Y}$の元をすべてとる．
+    \[
+        \overline{O_{\lambda_1} \times O_{\lambda_2}} = \overline{O_{\lambda_1}} \times \overline{O_{\lambda_2}}
+    \]
+    であるから，
+    \begin{align*}
+        \bigcap (\overline{O_{\lambda_1}} \times \overline{O_{\lambda_2}}) & = (\bigcap \overline{O_{\lambda_1}}) \times (\bigcap \overline{O_{\lambda_2}}) \\
+        & = \{ x\} \times \{y\}
+    \end{align*}
+    よって，$(x,y)$を含むような閉集合の近傍の共通部分は$(x,y)$のみで，
+    $X \times Y$はHaussdorff的．（上にとった集合で閉近傍はつくれていないが，これ以上閉近傍をとっても，$\{x\} \times \{y\}$よりも合併が小さくなることはない．）
+
+    逆に，$X \times Y$の部分空間を$y \in Y$で固定して，部分空間を$X \times \{y\}$とすると，$X \times \{y\}$はHaussdorff的で，これと同相な$X$もHaussdorff的．
+\end{proof}
+\end{leftbar}
 \end{document}
